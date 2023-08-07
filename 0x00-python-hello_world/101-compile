@@ -1,0 +1,2 @@
+#!/bin/bash
+filename=$(basename "$PYFILE" .py); python3 -m py_compile "$PYFILE" && mv "__pycache__/${filename}.cpython-310.pyc" "${filename}.pyc" && rm -r "__pycache__"
