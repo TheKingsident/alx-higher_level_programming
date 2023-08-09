@@ -6,7 +6,7 @@ def fizzbuzz():
             print("Fizz", end=" ")
         elif (n % 5 == 0) and (n % 3 != 0):
             if n == 100:
-                print("Buzz", end="")
+                print("Buzz", end=" ")
                 continue
             print("Buzz", end=" ")
         elif (n % 3 == 0) and (n % 5 == 0):
