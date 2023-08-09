@@ -1,9 +1,10 @@
-#1/usr/bin/python3
+#!/usr/bin/python3
 
 def uppercase(s):
+    statement = ""
     for character in s:
         if 'a' <= character <= 'z':
-            print("{}".format(chr(ord(character) - ord('a') + ord('A'))), end="")
+            statement += "{}".format(chr(ord(character) - ord('a') + ord('A')))
         else:
-            print("{}".format(character), end="")
-    print()
+            statement += "{}".format(character)
+    print(statement)
