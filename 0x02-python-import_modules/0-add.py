@@ -9,4 +9,5 @@ def print_add():
     print(f"{a} + {b} = {addition(a, b)}")
 
 
-print_add()
+if __name__ == "__main__":
+    print_add()
