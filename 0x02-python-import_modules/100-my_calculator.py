@@ -6,7 +6,6 @@ from sys import argv, exit
 
 
 arguments = argv[1:]
-operator = arguments[1]
 number_of_args = len(arguments)
 
 if number_of_args != 3:
@@ -15,6 +14,7 @@ if number_of_args != 3:
 else:
     a = int(arguments[0])
     b = int(arguments[2])
+    operator = arguments[1]
     match operator:
         case "+":
             print(f"{a} {operator} {b} = {add(a, b)}")
