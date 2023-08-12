@@ -16,19 +16,19 @@ if __name__ == "__main__":
         a = int(arguments[0])
         b = int(arguments[2])
         operator = arguments[1]
-        match operator:
-            case "+":
-                print(f"{a} {operator} {b} = {add(a, b)}")
-                exit(0)
-            case "-":
-                print(f"{a} {operator} {b} = {sub(a, b)}")
-                exit(0)
-            case "*":
-                print(f"{a} {operator} {b} = {mul(a, b)}")
-                exit(0)
-            case "/":
-                print(f"{a} {operator} {b} = {div(a, b)}")
-                exit(0)
-            case _:
-                print("Unknown operator. Available operators: +, -, * and /")
-                exit(1)
+
+        if operator == "+":
+            print(f"{a} {operator} {b} = {add(a, b)}")
+            exit(0)
+        elif operator == "-":
+            print(f"{a} {operator} {b} = {sub(a, b)}")
+            exit(0)
+        elif operator == "*":
+            print(f"{a} {operator} {b} = {mul(a, b)}")
+            exit(0)
+        elif operator == "/":
+            print(f"{a} {operator} {b} = {div(a, b)}")
+            exit(0)
+        else:
+            print("Unknown operator. Available operators: +, -, * and /")
+            exit(1)
