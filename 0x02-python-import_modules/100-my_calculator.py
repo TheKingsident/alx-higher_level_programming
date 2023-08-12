@@ -5,7 +5,7 @@ from calculator_1 import add, sub, mul, div
 from sys import argv, exit
 
 
-def main():
+if __name__ == "__main__":
     arguments = argv[1:]
     number_of_args = len(arguments)
 
@@ -32,7 +32,3 @@ def main():
             case _:
                 print("Unknown operator. Available operators: +, -, * and /")
                 exit(1)
-
-
-if __name__ == "__main__":
-    main()
