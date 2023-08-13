@@ -2,7 +2,7 @@
 
 def print_matrix_integer(matrix=[[]]):
     if not matrix:
-        print("".format(), end=" ")
+        print()
         return
 
     for row_idx, row in enumerate(matrix):
