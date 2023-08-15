@@ -8,16 +8,19 @@
  */
 int is_palindrome(listint_t **head)
 {
-	if (*head == NULL || (*head)->next == NULL)
-	{
-		return (1); }
-
 	listint_t *crawl;
 	listint_t *quick;
 	int result;
 
+
+	if (*head == NULL || (*head)->next == NULL)
+	{
+		return (1); }
+
+
 	quick = *head;
 	crawl = *head;
+
 	while (quick->next != NULL && quick->next->next != NULL)
 	{
 		crawl = crawl->next;
