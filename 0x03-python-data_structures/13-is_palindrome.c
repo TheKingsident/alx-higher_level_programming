@@ -14,6 +14,7 @@ int is_palindrome(listint_t **head)
 
 	listint_t *crawl;
 	listint_t *quick;
+	int result;
 
 	quick = *head;
 	crawl = *head;
@@ -23,8 +24,6 @@ int is_palindrome(listint_t **head)
 		quick = quick->next->next; }
 
 	reverse_list(&crawl->next);
-
-	int result;
 
 	result = compare_lists(*head, crawl->next);
 	reverse_list(&crawl->next);
