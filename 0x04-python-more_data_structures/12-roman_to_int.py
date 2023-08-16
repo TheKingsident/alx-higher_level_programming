@@ -11,6 +11,9 @@ def roman_to_int(roman_string):
             'M': 1000
             }
 
+    if roman_string is None or not roman_string:
+        return 0
+
     integer, recent = 0, 0
 
     for character in reversed(roman_string):
