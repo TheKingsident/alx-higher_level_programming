@@ -8,9 +8,6 @@ def safe_print_division(a, b):
     except (ZeroDivisionError, TypeError):
         return None
     finally:
-        try:
-            print("Inside result: {}".format(div_result))
-        except NameError:
-            pass
+        print("Inside result: {}".format(div_result))
 
     return div_result
