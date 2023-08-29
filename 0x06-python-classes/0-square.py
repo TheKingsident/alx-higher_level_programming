@@ -1,5 +1,11 @@
 #!/usr/bin/python3
 
+"""
+This module contains the square class definintion
+Hope this is how a proper documentation  looks like
+"""
+
+
 class Square:
     """
     Represents a square shape.
