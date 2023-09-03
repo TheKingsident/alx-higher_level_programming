@@ -1,0 +1,35 @@
+>>> from 0x07-python-test_driven_development.0-add_integer import add_integer
+
+>>> add_integer(5, 3)
+8
+
+>>> add_integer(5.5, 3)
+8
+
+>>> add_integer(5, 0)
+5
+
+>>> add_integer(0, 0)
+0
+
+>>> add_integer(-5, 3)
+-2
+
+>>> add_integer(5, -3)
+2
+
+>>> add_integer(3.5, 2.5)
+5
+
+>>> add_integer(5.0, 3.0)
+8
+
+>>> add_integer("5", 3)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+>>> add_integer(5, "3")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
