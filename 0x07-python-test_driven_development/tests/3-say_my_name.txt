@@ -1,0 +1,35 @@
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+>>> say_my_name("john", "doe")  # Test with lowercase names
+My name is john doe
+
+>>> say_my_name("Mário", "Santos")  # Test with special characters
+My name is Mário Santos
+
+>>> say_my_name("John", "O'Reilly")  # Test with special characters
+My name is John O'Reilly
+
+>>> say_my_name("Alexander", "the Great")  # Test with longer names
+My name is Alexander the Great
+
+>>> say_my_name("Mary", "")  # Test with an empty last name
+My name is Mary
+
+>>> say_my_name("Jörg", "Müller")  # Test with non-ASCII characters
+My name is Jörg Müller
+
+>>> say_my_name("John", "Doe")
+My name is John Doe
+
+>>> say_my_name("Alice")
+My name is Alice
+
+>>> say_my_name(123)
+Traceback (most recent call last):
+	...
+TypeError: first_name must be a string
+
+>>> say_my_name("Bob", 456)
+Traceback (most recent call last):
+	...
+TypeError: last_name must be a string
