@@ -4,6 +4,7 @@
 This module contains the rectangle class definintion
 """
 
+
 class Rectangle:
     """
     Represents a rectangle shape.
