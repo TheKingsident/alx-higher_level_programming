@@ -1,24 +1,27 @@
 #!/usr/bin/python3
 
+"""
+This module is a program that solves the N queens problem.
+"""
 import sys
 
-def is_safe(cbord, row, col):
+def is_safe(board, row, col):
     """
-    Check if it's safe to place a queen at cbord[row][col].
+    Check if it's safe to place a queen at board[row][col].
     """
     # Check the left side of the current row
     for i in range(col):
-        if cbord[row][i] == 1:
+        if board[row][i] == 1:
             return False
     
     # Check upper diagonal on the left side
     for i, j in zip(range(row, -1, -1), range(col, -1, -1)):
-        if cbord[i][j] == 1:
+        if board[i][j] == 1:
             return False
     
     # Check lower diagonal on the left side
-    for i, j in zip(range(row, len(cbord), 1), range(col, -1, -1)):
-        if cbord[i][j] == 1:
+    for i, j in zip(range(row, len(board), 1), range(col, -1, -1)):
+        if board[i][j] == 1:
             return False
     
     return True
@@ -31,20 +34,20 @@ def solve_nqueens(n):
         print("N must be at least 4")
         sys.exit(1)
     
-    cbord = [[0 for _ in range(n)] for _ in range(n)]
+    board = [[0 for _ in range(n)] for _ in range(n)]
     solutions = []
 
     def backtrack(col):
         if col >= n:
             # All queens are placed successfully, add this solution to the list
-            solutions.append(["".join(["Q" if cell == 1 else "." for cell in row]) for row in cbord])
+            solutions.append([(i, row.index(1)) for i, row in enumerate(board)][::-1])
             return
 
         for i in range(n):
-            if is_safe(cbord, i, col):
-                cbord[i][col] = 1
+            if is_safe(board, i, col):
+                board[i][col] = 1
                 backtrack(col + 1)
-                cbord[i][col] = 0
+                board[i][col] = 0
 
     backtrack(0)
     
@@ -64,9 +67,7 @@ def main():
     solutions = solve_nqueens(n)
     
     for solution in solutions:
-        for row in solution:
-            print(row)
-        print()
+        print([list(row) for row in solution])
 
 if __name__ == "__main__":
     main()
