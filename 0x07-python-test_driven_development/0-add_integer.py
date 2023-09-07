@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Adds two integers or floats and returns the result as an integer.
-- This function takes two numeric arguments, 'a' and 'b', which can be either integers or floats.
+- Two numeric arguments, 'a' and 'b', which can be either integers or floats.
 - It raises a TypeError if either 'a' or 'b' is not a numeric type.
 """
 
