@@ -8,11 +8,10 @@ and returns a new matrix.
 
 def matrix_divided(matrix, div):
     """
-    Divides all elements of a matrix by a given number.
+    Divides all elements of a matrix by a given number and returns a new matrix.
     """
-
-    if not isinstance(matrix, list) or not all(isinstance(row, list)
-                                               and all(isinstance(num, (int, float)) for num in row) for row in matrix):
+    
+    if not isinstance(matrix, list) or not all(isinstance(row, list) and all(isinstance(num, (int, float)) for num in row) for row in matrix):
         raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
 
     row_sizes = set(len(row) for row in matrix)
@@ -27,3 +26,4 @@ def matrix_divided(matrix, div):
     new_matrix = [[round(num / div, 2) for num in row] for row in matrix]
 
     return new_matrix
+
