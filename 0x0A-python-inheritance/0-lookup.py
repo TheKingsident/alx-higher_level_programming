@@ -17,9 +17,10 @@ def lookup(obj):
         and functions)
               belonging to the specified object.
     """
-    o_list = []
+    o_dict = {}
     all_attributes = dir(obj)
 
-    o_list = [attr for attr in all_attributes if callable(getattr(obj, attr))]
+    for attr in all_attributes:
+        o_dict[attr] = getattr(obj, attr)
 
-    return o_list
+    return list(o_dict.keys())
