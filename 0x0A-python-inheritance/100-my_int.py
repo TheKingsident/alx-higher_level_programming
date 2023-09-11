@@ -5,6 +5,9 @@ This module contains a class MyInt that inherits from int
 
 
 class MyInt(int):
+    """
+    The class that inherits from int
+    """
     def __eq__(self, other):
         """
         Overrides the equality operator (==) to invert its behavior.
