@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+This module defines the base class for geometry-related operations.
+"""
+
 
 class BaseGeometry():
     """
