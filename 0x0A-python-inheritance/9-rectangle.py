@@ -43,7 +43,7 @@ class Rectangle(BaseGeometry):
         self.__height = height
         self.integer_validator("width", self.__width)
         self.integer_validator("height", self.__height)
-    
+
     def area(self):
         """
         Computes and returns the area of the rectangle.
@@ -52,7 +52,7 @@ class Rectangle(BaseGeometry):
             int: The area of the rectangle.
         """
         return self.__height * self.__width
-    
+
     def __str__(self):
         """
         Returns a string representation of the rectangle.
