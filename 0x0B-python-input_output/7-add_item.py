@@ -12,12 +12,15 @@ new_list = list(arguments)
 # Specify the filename for the JSON file
 filename = "add_item.json"
 
-# Check if the JSON file exists and load its content
-if load_from_json_file(filename):
+try:
+    # Attempt to load existing data from the JSON file
     existing_list = load_from_json_file(filename)
+except FileNotFoundError:
+    # If the file doesn't exist, create an empty list
+    existing_list = []
 
-    # Merge the existing data with the command-line arguments
-    new_list.extend(existing_list)
+# Merge the existing data with the command-line arguments
+new_list.extend(existing_list)
 
 # Save the combined data to the JSON file
 save_to_json_file(new_list, filename)
