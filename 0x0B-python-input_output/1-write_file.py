@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Define a function
+Defines a function
 """
 
 
