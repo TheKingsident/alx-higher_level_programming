@@ -2,7 +2,6 @@
 """
 Defines a function
 """
-import json
 
 
 def class_to_json(obj):
