@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-Print a square of '#'q characters.
+Print a square of '#' characters.
 Args:
     size (int): The size of the square.
 """
