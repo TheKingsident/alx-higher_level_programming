@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module deines a function that prints names
+This module defines a function that prints names
 Prints the name in the format:
 My name is <first name> <last name>.
 """
