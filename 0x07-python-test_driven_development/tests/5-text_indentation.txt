@@ -1,0 +1,49 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("This is a sample text. It has some sentences? And it uses colons: like this.")
+This is a sample text.
+<BLANKLINE>
+It has some sentences?
+<BLANKLINE>
+And it uses colons:
+<BLANKLINE>
+like this.
+<BLANKLINE>
+
+>>> text_indentation("No special characters in this text")
+No special characters in this text
+
+>>> text_indentation(".?:")
+.
+<BLANKLINE>
+?
+<BLANKLINE>
+:
+<BLANKLINE>
+
+>>> text_indentation("Multiple spaces before these special characters . ? : are ignored.")
+Multiple spaces before these special characters .
+<BLANKLINE>
+?
+<BLANKLINE>
+:
+<BLANKLINE>
+are ignored.
+<BLANKLINE>
+
+>>> text_indentation("The text ends with a period.")
+The text ends with a period.
+<BLANKLINE>
+
+>>> text_indentation("No special characters? in this text. And no colons:")
+No special characters?
+<BLANKLINE>
+in this text.
+<BLANKLINE>
+And no colons:
+<BLANKLINE>
+
+>>> text_indentation(123)  # Raises a TypeError
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
