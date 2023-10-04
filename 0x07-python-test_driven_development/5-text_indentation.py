@@ -22,6 +22,6 @@ def text_indentation(text):
         if char in '.?:':
             print(line.strip(), end="\n\n")
             line = ""
-            
+
     if line:
-        print(line.strip())
+        print(line.strip(), end="")
