@@ -1,0 +1,112 @@
+>>> BaseGeometry =  __import__('7-base_geometry').BaseGeometry
+>>> geometry = BaseGeometry()
+>>> geometry.area()
+Traceback (most recent call last):
+    ...
+Exception: area() is not implemented
+
+>>> geometry.integer_validator("side_length", 10)  # Valid integer value, no exception raised
+
+>>> geometry.integer_validator("side_length", "invalid_value")  # Invalid value, TypeError raised
+Traceback (most recent call last):
+    ...
+TypeError: side_length must be an integer
+
+>>> geometry.integer_validator("side_length", -5)  # Negative value, ValueError raised
+Traceback (most recent call last):
+    ...
+ValueError: side_length must be greater than 0
+
+>>> geometry =  __import__('7-base_geometry').BaseGeometry
+>>> geometry.area()
+Traceback (most recent call last):
+    ...
+Exception: area() is not implemented
+
+>>> geometry =  __import__('7-base_geometry').BaseGeometry
+>>> geometry.integer_validator("side_length", 10)  # Valid integer value, no exception raised
+
+>>> geometry =  __import__('7-base_geometry').BaseGeometry
+>>> geometry.integer_validator("side_length", "invalid_value")  # Invalid value, TypeError raised
+Traceback (most recent call last):
+    ...
+TypeError: side_length must be an integer
+
+>>> geometry =  __import__('7-base_geometry').BaseGeometry
+>>> geometry.integer_validator("side_length", -5)  # Negative value, ValueError raised
+Traceback (most recent call last):
+    ...
+ValueError: side_length must be greater than 0
+
+>>> geometry =  __import__('7-base_geometry').BaseGeometry
+>>> geometry.integer_validator("side_length", 0)  # Zero value, ValueError raised
+Traceback (most recent call last):
+    ...
+ValueError: side_length must be greater than 0
+
+>>> geometry =  __import__('7-base_geometry').BaseGeometry
+>>> geometry.integer_validator("side_length", 3.14)  # Floating-point value, TypeError raised
+Traceback (most recent call last):
+    ...
+TypeError: side_length must be an integer
+
+>>> geometry =  __import__('7-base_geometry').BaseGeometry
+>>> geometry.integer_validator("side_length", "string_value")  # String value, TypeError raised
+Traceback (most recent call last):
+    ...
+TypeError: side_length must be an integer
+
+>>> geometry =  __import__('7-base_geometry').BaseGeometry
+>>> geometry.integer_validator("side_length", None)  # None value, TypeError raised
+Traceback (most recent call last):
+    ...
+TypeError: side_length must be an integer
+
+>>> geometry =  __import__('7-base_geometry').BaseGeometry
+>>> geometry.integer_validator("side_length", 42)  # Valid integer value, no exception raised
+
+>>> geometry =  __import__('7-base_geometry').BaseGeometry
+>>> geometry.integer_validator("height", 100)  # Valid integer value, no exception raised
+
+>>> geometry =  __import__('7-base_geometry').BaseGeometry
+>>> geometry.integer_validator("radius", -8)  # Negative value, ValueError raised
+Traceback (most recent call last):
+    ...
+ValueError: radius must be greater than 0
+
+>>> geometry =  __import__('7-base_geometry').BaseGeometry
+>>> geometry.integer_validator("length", 5)  # Valid integer value, no exception raised
+
+>>> geometry =  __import__('7-base_geometry').BaseGeometry
+>>> geometry.integer_validator("width", 0)  # Zero value, ValueError raised
+Traceback (most recent call last):
+    ...
+ValueError: width must be greater than 0
+
+>>> geometry =  __import__('7-base_geometry').BaseGeometry
+>>> geometry.integer_validator("side_length", 7)  # Valid integer value, no exception raised
+
+>>> geometry =  __import__('7-base_geometry').BaseGeometry
+>>> geometry.integer_validator("side_length", -12)  # Negative value, ValueError raised
+Traceback (most recent call last):
+    ...
+ValueError: side_length must be greater than 0
+
+>>> geometry =  __import__('7-base_geometry').BaseGeometry
+>>> geometry.integer_validator("size", 15)  # Valid integer value, no exception raised
+
+>>> geometry =  __import__('7-base_geometry').BaseGeometry
+>>> geometry.integer_validator("radius", 2)  # Valid integer value, no exception raised
+
+>>> geometry =  __import__('7-base_geometry').BaseGeometry
+>>> geometry.integer_validator("length", "invalid_value")  # Invalid value, TypeError raised
+Traceback (most recent call last):
+    ...
+TypeError: length must be an integer
+
+>>> geometry =  __import__('7-base_geometry').BaseGeometry
+>>> geometry.integer_validator("width", 3.5)  # Floating-point value, TypeError raised
+Traceback (most recent call last):
+    ...
+TypeError: width must be an integer
+"""
