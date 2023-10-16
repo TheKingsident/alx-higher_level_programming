@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-
+"""
+A module that defines a class representing a square, inheriting from
+Rectangle.
+"""
 from models.rectangle import Rectangle
 
 

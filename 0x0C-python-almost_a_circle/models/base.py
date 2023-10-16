@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+A module that defines a Base class
+Rectangle class inherits from this.
+"""
 import json
 
 

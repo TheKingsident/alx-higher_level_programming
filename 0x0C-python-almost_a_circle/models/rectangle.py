@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-
+"""
+A module that defines a class representing a rectangle, inheriting from
+Base.
+"""
 from models.base import Base
 
 
