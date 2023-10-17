@@ -3,10 +3,16 @@ from models.square import Square
 
 class TestSquareMethods(unittest.TestCase):
 
-    def test_str(self):
-        # Test the __str__() method
-        square = Square(5, 2, 3, 42)
-        expected_output = "[Square] (42) 2/3 - 5"
+    def test_str_with_default_values(self):
+        # Test __str__() with default values
+        square = Square(5)
+        expected_output = "[Square] (13) 0/0 - 5"
+        self.assertEqual(str(square), expected_output)
+
+    def test_str_with_large_id(self):
+        # Test __str__() with a large ID
+        square = Square(5, 2, 3)
+        expected_output = "[Square] (14) 2/3 - 5"
         self.assertEqual(str(square), expected_output)
 
     def test_size_property(self):
@@ -19,7 +25,7 @@ class TestSquareMethods(unittest.TestCase):
     def test_update(self):
         # Test the update() method
         square = Square(5, 2, 3, 42)
-        square.update(99, size=20, x=4, y=5)
+        square.update(99, 20, 4, 5)
         self.assertEqual(square.id, 99)
         self.assertEqual(square.size, 20)
         self.assertEqual(square.x, 4)

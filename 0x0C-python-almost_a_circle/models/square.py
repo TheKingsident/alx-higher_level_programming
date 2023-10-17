@@ -73,7 +73,7 @@ class Square(Rectangle):
             square = Square(5)
             print(square)  # Output: "[Square] (1) 0/0 - 5"
         """
-        return f"[Square] {(self.id)} {self.x}/{self.y} - {self.size}"
+        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
 
     @property
     def size(self):
