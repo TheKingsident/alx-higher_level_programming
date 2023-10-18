@@ -4,6 +4,7 @@ A module that defines a Base class
 Rectangle class inherits from this.
 """
 import json
+import csv
 
 
 class Base:
@@ -172,6 +173,63 @@ class Base:
                 return instances
         except FileNotFoundError:
             f"{filename} does not exist)"
+            return []
+        except IOError:
+            print("An error occurred while reading the file.")
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        if list_objs is None:
+            list_objs = []
+        csv_filename = cls.__name__ + ".csv"
+        dict_list = [obj.to_dictionary() for obj in list_objs]
+
+        with open(csv_filename, 'w', newline='') as csv_file:
+            csv_writer = csv.writer(csv_file)
+
+            if cls.__name__ == "Rectangle":
+                csv_writer.writerow(["id", "width", "height", "x", "y"])
+            elif cls.__name__ == "Square":
+                csv_writer.writerow(["id", "size", "x", "y"])
+
+            for item in dict_list:
+                csv_writer.writerow([
+                                        item['id'],
+                                        item['width' if cls.__name__ ==
+                                             "Rectangle" else "size"],
+                                        item['height' if cls.__name__ ==
+                                             "Rectangle" else "size"],
+                                        item['x'],
+                                        item['y']])
+
+
+    @classmethod
+    def load_from_file_csv(cls):
+        csv_filename = cls.__name__ + ".csv"
+
+        try:
+            with open(csv_filename, 'r', newline='') as csv_file:
+                csv_reader = csv.reader(csv_file)
+                next(csv_reader)
+
+                instances = []
+                for row in csv_reader:
+                    if cls.__name__ == "Rectangle":
+                        instance = cls(int(row[1]),
+                                       int(row[2]),
+                                       int(row[3]),
+                                       int(row[4]),
+                                       int(row[0]))
+                    elif cls.__name__ == "Square":
+                        instance = cls(int(row[1]), int(row[2]), int(row[3]),
+                                       int(row[0]))
+
+                    instances.append(instance)
+
+                return instances
+        except FileNotFoundError:
+            print(f"{csv_filename} does not exist")
             return []
         except IOError:
             print("An error occurred while reading the file.")
