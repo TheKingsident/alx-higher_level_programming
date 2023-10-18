@@ -228,6 +228,8 @@ class Base:
 
                 return instances
         except FileNotFoundError:
+            print(f"{csv_filename} does not exist")
             return []
         except IOError:
+            print("An error occurred while reading the file.")
             return []
