@@ -203,7 +203,6 @@ class Base:
                                         item['x'],
                                         item['y']])
 
-
     @classmethod
     def load_from_file_csv(cls):
         csv_filename = cls.__name__ + ".csv"
