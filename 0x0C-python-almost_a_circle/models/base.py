@@ -171,7 +171,7 @@ class Base:
                 instances = [cls.create(**data) for data in instance_dict]
                 return instances
         except FileNotFoundError:
-            f("{filename} does not exist")
+            f"{filename} does not exist)"
             return []
         except IOError:
             print("An error occurred while reading the file.")
