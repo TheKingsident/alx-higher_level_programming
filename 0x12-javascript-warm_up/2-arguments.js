@@ -2,7 +2,7 @@
 
 let argumentCo;
 
-for (let i = 2; i < process.argv.length; i++) {
+for (let i = 1; i < process.argv.length; i++) {
   argumentCo++;
 }
 
