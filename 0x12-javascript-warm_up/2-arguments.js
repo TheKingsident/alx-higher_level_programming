@@ -1,6 +1,10 @@
 #!/usr/bin/node
 
-const argumentCo = process.argv.slice(2);
+let argumentCo;
+
+for (let i = 2; i < process.argv.length; i++) {
+  argumentCo++;
+}
 
 if (argumentCo.length === 0) {
   console.log('No argument');
