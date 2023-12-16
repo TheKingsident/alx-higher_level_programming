@@ -10,7 +10,7 @@ fs.readFile(sourceFile1, 'utf8', (err, data1) => {
   fs.readFile(sourceFile2, 'utf8', (err, data2) => {
     if (err) throw err;
 
-    const combinedData = data1 + '\n' + data2 + '\n';
+    const combinedData = data1 + data2;
 
     fs.writeFile(destFile, combinedData, 'utf8', (err) => {
       if (err) throw err;
