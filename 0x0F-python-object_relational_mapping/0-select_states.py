@@ -7,12 +7,12 @@ Module script that list states
 """
 
 
-def list_states(mysql_username, mysql_password, db_name):
+def list_states():
     """
     List all states from the database.
     """
-    db = MySQLdb.connect(host="localhost", port=3306, user=mysql_username,
-                         passwd=mysql_password, db=db_name)
+    db = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1],
+                         passwd=sys.argv[2], db=sys.argv[3])
     cur = db.cursor()
     cur.execute("SELECT * FROM states ORDER BY id ASC")
     rows = cur.fetchall()
@@ -23,8 +23,4 @@ def list_states(mysql_username, mysql_password, db_name):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) == 4:
-        mysql_username = sys.argv[1]
-        mysql_password = sys.argv[2]
-        db_name = sys.argv[3]
-        list_states(mysql_username, mysql_password, db_name)
+    list_states()
