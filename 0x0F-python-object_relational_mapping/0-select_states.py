@@ -3,13 +3,14 @@ import MySQLdb
 import sys
 
 """
-List states
+Module script that list states
 """
 
 
 def list_states(mysql_username, mysql_password, db_name):
     """
-    List all states from the database.
+    List all states from
+    the database.
     """
     db = MySQLdb.connect(host="localhost", port=3306, user=mysql_username,
                          passwd=mysql_password, db=db_name)
