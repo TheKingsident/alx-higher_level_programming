@@ -13,7 +13,7 @@ def search_states():
                          db=sys.argv[3])
 
     nameSch = sys.argv[4]
-    query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC".format(nameSch)
+    query = "SELECT * FROM {} WHERE name = %s ORDER BY id ASC".format('states')
     cur = db.cursor()
     cur.execute(query, (nameSch,))
     rows = cur.fetchall()
