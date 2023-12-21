@@ -12,10 +12,10 @@ def search_states():
                          passwd=sys.argv[2],
                          db=sys.argv[3])
 
-    nameSrch = sys.argv[4]
-    query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
+    nameSch = sys.argv[4]
+    query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC".format(nameSch)
     cur = db.cursor()
-    cur.execute(query, (nameSrch,))
+    cur.execute(query, (nameSch,))
     rows = cur.fetchall()
     for row in rows:
         print(row)
