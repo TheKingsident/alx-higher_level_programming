@@ -11,9 +11,9 @@ def search_states():
                          user=sys.argv[1],
                          passwd=sys.argv[2],
                          db=sys.argv[3])
-    
+
     nameSrch = sys.argv[4]
-    query  = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
+    query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
     cur = db.cursor()
     cur.execute(query, (nameSrch,))
     rows = cur.fetchall()
