@@ -1,16 +1,11 @@
 #!/usr/bin/python3
+""" Module script that list states """
 import MySQLdb
 import sys
 
-"""
-Module script that list states
-"""
-
 
 def list_states():
-    """
-    List all states from the database.
-    """
+    """ List all states from the database. """
     db = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1],
                          passwd=sys.argv[2], db=sys.argv[3])
     cur = db.cursor()
