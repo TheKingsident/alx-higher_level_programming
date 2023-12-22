@@ -6,6 +6,7 @@ Lists all State objects, and corresponding City objects
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, joinedload
 from relationship_state import State
+from relationship_city import City  # Import City at the beginning
 import sys
 
 
@@ -21,7 +22,6 @@ def list_states_and_cities(mysql_username, mysql_pswd, db_name):
     session = Session()
 
     # Querying all states with their related cities
-    from relationship_city import City
     states = session.query(State).options(joinedload(State.cities)).order_by(
         State.id, City.id).all()
 
