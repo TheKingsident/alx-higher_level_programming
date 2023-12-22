@@ -30,6 +30,7 @@ def print_state_by_name(mysql_username, mysql_pswd, db_name, state_name):
 
     session.close()
 
+
 if __name__ == "__main__":
     if len(sys.argv) == 5:
         mysql_username = sys.argv[1]
