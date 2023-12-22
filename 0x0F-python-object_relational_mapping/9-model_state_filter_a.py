@@ -9,7 +9,7 @@ from model_state import State
 import sys
 
 
-def print_first_state(mysql_username, mysql_pswd, db_name):
+def print_states_with_a(mysql_username, mysql_pswd, db_name):
     """
     Print the first State object from the database.
     """
@@ -20,12 +20,10 @@ def print_first_state(mysql_username, mysql_pswd, db_name):
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    first_state = session.query(State).order_by(State.id).first()
+    states = session.query(State).filter(State.name.like('%a%')).order_by(State.id)
 
-    if first_state:
-        print(f"{first_state.id}: {first_state.name}")
-    else:
-        print("Nothing")
+    for state in states:
+        print(f"{state.id}: {state.name}")
 
     session.close()
 
@@ -35,4 +33,4 @@ if __name__ == "__main__":
         mysql_username = sys.argv[1]
         mysql_pswd = sys.argv[2]
         db_name = sys.argv[3]
-        print_first_state(mysql_username, mysql_pswd, db_name)
+        print_states_with_a(mysql_username, mysql_pswd, db_name)
