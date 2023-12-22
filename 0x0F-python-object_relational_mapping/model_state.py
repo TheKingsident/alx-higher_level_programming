@@ -12,8 +12,6 @@ Base = declarative_base()
 class State(Base):
     """
     State class:
-    - Inherits from Base.
-    - Links to MySQL table states.
     - Has id and name attributes.
     """
     __tablename__ = 'states'
