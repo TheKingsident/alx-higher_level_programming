@@ -1,0 +1,1 @@
+This directory contains assignment files for the "0x10. Python - Network #0" task from ALX
