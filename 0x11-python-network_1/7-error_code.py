@@ -3,7 +3,6 @@
 
 import sys
 import requests
-from requests.exceptions import HTTPError
 
 
 def error_code(url):
@@ -13,7 +12,7 @@ def error_code(url):
         print("Error code:", response.status_code)
     else:
         print(response.text)
-    
+
 
 if __name__ == "__main__":
     url = sys.argv[1]
