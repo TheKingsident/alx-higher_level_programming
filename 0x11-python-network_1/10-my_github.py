@@ -15,7 +15,7 @@ def fetch_github_user_id(username, token):
         user_id = response.json().get('id')
         print(user_id)
     else:
-        print("Failed to fetch user details")
+        print("None")
 
 
 if __name__ == "__main__":
