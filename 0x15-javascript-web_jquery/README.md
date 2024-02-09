@@ -1,0 +1,1 @@
+This directory contains assignment files for the "0x15. JavaScript - Web jQuery" task from ALX
